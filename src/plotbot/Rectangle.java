@@ -18,10 +18,10 @@ public class Rectangle implements Plottable {
 	/**
 	 * This method sets the parameters of the rectangle to be drawn.
 	 * A plottable rectangle is defined by Lower left X, Lower left Y, Upper right X, Upper right Y.
-	 * @param X1 the start x coordinate
-	 * @param Y1 the start y coordinate
-	 * @param X2 the end x coordinate
-	 * @param Y2 the end y coordinate
+	 * @param lowleftX the lower left X coordinate
+	 * @param lowleftY the lower left Y coordinate
+	 * @param uprightX the upper right X coordinate
+	 * @param uprightY the upper right Y coordinate
 	 */
 	public void setCoord(double lowleftX, double lowleftY, double uprightX, double uprightY) {
 		this.lowLeftX = lowleftX;
@@ -44,20 +44,20 @@ public class Rectangle implements Plottable {
 	 * starting from the lower left corner of the rectangle.
 	 */ 
 	public void drawRect() {
-		roboControl.prepDirecChangeCCW();
-		line.setCoord(lowLeftX, lowLeftY, -upRightX, upRightY);
-		roboControl.MoveToXY(lowLeftX,lowLeftY);
-		roboControl.penDown();
-		line.plot(roboControl);
-		roboControl.prepDirecChangeCW();
-		line.setCoord(-upRightX, upRightY, upRightX , upRightY);
-		line.plot(roboControl);
-		line.setCoord(upRightX, upRightY, upRightX, lowLeftY);
-		line.plot(roboControl);
-		roboControl.prepDirecChangeCCW();
-		line.setCoord(upRightX, lowLeftY, lowLeftX , lowLeftY);
-		line.plot(roboControl);
-		roboControl.penUp();
+		this.roboControl.prepDirecChangeCCW();
+		this.line.setCoord(lowLeftX, lowLeftY, -upRightX, upRightY);
+		this.roboControl.MoveToXY(lowLeftX,lowLeftY);
+		this.roboControl.penDown();
+		this.line.plot(roboControl);
+		this.roboControl.prepDirecChangeCW();
+		this.line.setCoord(-upRightX, upRightY, upRightX , upRightY);
+		this.line.plot(roboControl);
+		this.line.setCoord(upRightX, upRightY, upRightX, lowLeftY);
+		this.line.plot(roboControl);
+		this.roboControl.prepDirecChangeCCW();
+		this.line.setCoord(upRightX, lowLeftY, lowLeftX , lowLeftY);
+		this.line.plot(roboControl);
+		this.roboControl.penUp();
 	}
 	
 	/**
