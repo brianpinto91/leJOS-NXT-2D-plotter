@@ -48,7 +48,7 @@ public class PlotbotControl {
 	 * @param y the absolute vertical position (in mm)
 	 */
 	public void MoveToXY(double x, double y) {
-		double teta = co.xytoANgle(x, y);
+		double teta = co.xtoAngle(x);
 		rotateSwivelAngle(teta);
 		double motionDist = y - co.getCurrentPositionY();
 		Move(motionDist);
