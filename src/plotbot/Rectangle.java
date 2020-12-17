@@ -64,13 +64,13 @@ public class Rectangle implements Plottable {
 	 * This method sets the status whether to draw a rectangle or not
 	 */
 	public void isSelectedToDraw(){
-		status="yesDrawRectangle";
+		this.status="yesDrawRectangle";
 	}
 	
 	/**
 	 * This method return the status whether to draw a rectangle or not
 	 */
 	public String getStatus(){
-		return status;
+		return this.status;
 	}
 }
